@@ -1,5 +1,9 @@
 #include "apue.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include <dirent.h>
+
+void err_quit(const char *, ...) __atrribute__((noreturn));
 
 int
 main(int argc, char *argv[])

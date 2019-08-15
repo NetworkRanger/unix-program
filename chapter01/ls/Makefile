@@ -1,11 +1,12 @@
 NAME = ls
 OBJS = $(NAME).o
+CC=gcc
 
 $(NAME): $(OBJS)
-    ld $(OBJS)
+	ld $(OBJS)
 
 ls.o:
-    cc -I../../include $<
+	$(CC) -W -I../../include -o ls.o ls.c
 
 clean:
-    rm -rf *.o
+	rm -rf *.o
