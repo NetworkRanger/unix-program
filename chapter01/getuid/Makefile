@@ -1,4 +1,4 @@
-NAME = ls
+NAME = getuid
 CC=gcc
 CFLAGS=-ansi -Wall -DLINUX -D_GNU_SOURCE
 INCLUDE=-I../../include

@@ -1,4 +1,4 @@
-NAME = ls
+NAME = path
 CC=gcc
 CFLAGS=-ansi -Wall -DLINUX -D_GNU_SOURCE
 INCLUDE=-I../../include
@@ -9,7 +9,6 @@ all: $(NAME)
 
 %: %.c
 	$(CC) $(CFLAGS) $(INCLUDE) -o $@.o $@.c $(LDLIBS) -c 
-	$(CC) $(CFLAGS) -o $@ $@.o  $(LDLIBS)
 
 clean:
 	rm -rf $(NAME) *.o
