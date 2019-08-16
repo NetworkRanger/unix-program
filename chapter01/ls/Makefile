@@ -3,10 +3,7 @@ OBJS = $(NAME).o
 CC=gcc
 
 $(NAME): $(OBJS)
-	ld $(OBJS)
-
-ls.o:
-	$(CC) -W -I../../include -o ls.o ls.c
+	gcc -ansi -I../../include -Wall -DLINUX -D_GNU_SOURCE ls.c -o ls -L../../lib -lapue
 
 clean:
 	rm -rf *.o
