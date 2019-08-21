@@ -1,0 +1,15 @@
+NAME = $(notdir $(shell echo `pwd`))
+CC=cc
+CFLAGS=-ansi -Wall -DLINUX -D_GNU_SOURCE
+INCLUDE=-I../../include
+LDDIR=-L../../lib
+LDLIBS=$(LDDIR) -lapue -lpthread
+
+all: $(NAME)
+
+%: %.c
+	$(CC) $(CFLAGS) $(INCLUDE) $@.c lock.c -c 
+	$(CC) $(CFLAGS) -o $@ $@.o lock.o $(LDLIBS)
+
+clean:
+	rm -rf $(NAME)  *.o
