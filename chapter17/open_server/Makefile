@@ -1,0 +1,14 @@
+NAME = $(notdir $(shell echo `pwd`))
+CC=cc
+CFLAGS=-ansi -Wall -DLINUX -D_GNU_SOURCE
+INCLUDE=-I../../include
+LDDIR=-L../../lib
+LDLIBS=$(LDDIR) -lapue
+
+ALL:$(NAME)
+
+%:%.c
+	$(CC) $(CFLAGS) $(INCLUDE) -o $@.o $@.c -c 
+
+clean:
+	rm -rf $(NAME)  *.o
