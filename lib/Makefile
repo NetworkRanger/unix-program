@@ -11,14 +11,13 @@ OBJS   = bufargs.o cliconn.o clrfl.o \
 			openmax.o pathalloc.o popen.o prexit.o prmask.o \
 			ptyfork.o ptyopen.o readn.o recvfd.o senderr.o sendfd.o \
 			servaccept.o servlisten.o setfd.o setfl.o signal.o signalintr.o \
-			sleepus.o spipe.o tellwait.o ttymodes.o writen.o
+			sleepus.o spipe.o tellwait.o ttymodes.o writen.o db.o
 
 all:	$(LIBMISC) sleep.o
 
 $(LIBMISC):	$(OBJS)
 	$(AR) rv $(LIBMISC) $?
 	$(RANLIB) $(LIBMISC)
-
 
 clean:
 	rm -f *.o a.out core temp.* $(LIBMISC)
